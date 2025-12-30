@@ -1,0 +1,43 @@
+name: CI/CD & Artifact Release
+
+on:
+  push:
+    branches: [ master ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Artifact Directory
+        run: mkdir -p dist
+
+      - name: Package Template
+        run: |
+          zip -r dist/antigravity-template.zip .agent .cursorrules README.md
+          tar -czvf dist/antigravity-template.tar.gz .agent .cursorrules README.md
+
+      - name: Upload Artifacts (Actions)
+        uses: actions/upload-artifact@v4
+        with:
+          name: antigravity-template-bundle
+          path: dist/*
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/antigravity-template.zip
+            dist/antigravity-template.tar.gz
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
