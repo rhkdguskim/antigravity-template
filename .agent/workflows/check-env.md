@@ -1,17 +1,17 @@
 ---
-description: 현재 개발 환경(OS, Node.js, Git 등)을 확인하고 시스템 정보를 출력합니다.
+description: Check the current development environment (OS, Node.js, Git, etc.) and output system information.
 ---
 
-이 워크플로우는 사용자의 운영체제를 확인하고 필수 도구들의 설치 여부를 점검합니다.
+This workflow checks the user's operating system and verifies if the essential tools are installed.
 
-1. **OS 정보 확인**
-   - Mac/Linux인 경우: `uname -a` 실행
-   - Windows인 경우: `systeminfo | findstr /B /C:"OS Name" /C:"OS Version"` 실행
+1. **Check OS Information**
+   - For Mac/Linux: Run `uname -a`
+   - For Windows: Run `systeminfo | findstr /B /C:"OS Name" /C:"OS Version"`
 
-2. **도구 버전 확인**
+2. **Check Tool Versions**
    - Node.js: `node -v`
    - NPM: `npm -v`
    - Git: `git --version`
 
-3. **결과 요약**
-   - 확인된 모든 정보를 표 형식으로 정리하여 보고합니다.
+3. **Summary of Results**
+   - Organize all verified information into a table format and report it.

@@ -1,8 +1,8 @@
 # 🔒 Security Rule
 
-민감 정보 보호 및 보안 가이드라인입니다.
+Guidelines for sensitive information protection and security.
 
-## 📋 세부 지침
+## �� Detailed Guidelines
 
-1. **민감 정보 금지**: API Keys, Secrets, Passwords가 코드나 로그에 포함되지 않도록 하십시오.
-2. **입력 검증**: 외부 입력을 처리할 때는 항상 유효성 검사를 수행하십시오.
+1. **No Sensitive Info**: Ensure API Keys, Secrets, and Passwords are not included in code or logs.
+2. **Input Validation**: Always perform validation when handling external inputs.
