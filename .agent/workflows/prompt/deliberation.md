@@ -1,132 +1,131 @@
 ---
-description: 심사 숙고(Deliberation) 기법으로 체계적이고 다각적인 사고 과정을 거쳐 깊이 있는 분석과 의사결정을 수행합니다.
+description: Deliberation technique follows a systematic and multi-faceted thinking process for deep analysis and decision-making.
 ---
 
-복잡한 문제 해결, 의사결정, 전략 수립 시 **체계적이고 다각적인 사고 과정**을 거쳐 깊이 있는 분석을 수행하는 워크플로우입니다.
+This workflow performs deep analysis during complex problem-solving, decision-making, and strategy formulation through a **systematic and multi-faceted thinking process**.
 
-## 🎯 적용 상황
+## 🎯 Application Situations
 
-- 비즈니스 의사결정
-- 창의적 문제해결
-- 윤리적 딜레마
-- 연구 및 학습
-- 전략 수립
+- Business decision making
+- Creative problem solving
+- Ethical dilemmas
+- Research and learning
+- Strategy formulation
 
-> ⚠️ **주의**: 간단한 사실 확인이나 단순 정보 요청에는 불필요합니다.
+> ⚠️ **Caution**: Not necessary for simple fact-checking or basic information requests.
 
 ## 🔄 Workflow Process
 
-### Phase 1: 간과한 정보 파악
+### Phase 1: Identify Overlooked Information
 
-1. **누락 정보 점검**
+1. **Check for Missing Information**
    ```
-   이 문제에 대해 답변하기 전에:
-   - 내가 놓치고 있는 중요한 정보나 맥락이 있는가?
-   - 암묵적으로 가정하고 있는 것은 무엇인가?
-   - 추가로 고려해야 할 요소가 있는가?
+   Before answering this question:
+   - Is there any important information or context I am missing?
+   - What are the implicit assumptions I am making?
+   - Are there additional factors that should be considered?
    ```
 
-2. **인지적 편향 점검**
-   | 편향 유형 | 점검 질문 |
-   |----------|----------|
-   | 확증 편향 | 내 기존 믿음을 확인하는 정보만 찾고 있지 않은가? |
-   | 가용성 휴리스틱 | 쉽게 떠오르는 사례에만 의존하고 있지 않은가? |
-   | 앵커링 | 처음 받은 정보에 과도하게 의존하고 있지 않은가? |
-   | 후견 지혜 | 결과를 알고 나서 판단하고 있지 않은가? |
+2. **Check for Cognitive Biases**
+   | Bias Type | Check Question |
+   |-----------|----------------|
+   | Confirmation Bias | Am I only looking for information that confirms my existing beliefs? |
+   | Availability Heuristic | Am I relying too much on examples that come to mind easily? |
+   | Anchoring | Am I relying excessively on the first piece of information received? |
+   | Hindsight Bias | Am I judging based on knowing the outcome? |
 
-### Phase 2: 다양한 이해관계자 입장 고려
+### Phase 2: Consider Various Stakeholder Positions
 
-1. **이해관계자 대변**
+1. **Represent Stakeholders**
    ```
-   각 이해관계자의 입장에서 이 결정이 어떤 영향을 미치는지 분석:
+   Analyze how this decision affects each stakeholder:
    
-   - 직접 영향 받는 사람: [관점 분석]
-   - 간접 영향 받는 사람: [관점 분석]
-   - 의사결정자: [관점 분석]
-   - 미래 세대: [관점 분석]
+   - Those directly affected: [Perspective analysis]
+   - Those indirectly affected: [Perspective analysis]
+   - Decision-makers: [Perspective analysis]
+   - Future generations: [Perspective analysis]
    ```
 
-2. **포괄적 해결책 모색**
-   - 가장 취약한 이해관계자를 우선 고려
-   - 장단기 영향 균형 맞추기
+2. **Seek Comprehensive Solutions**
+   - Prioritize consideration for the most vulnerable stakeholders
+   - Balance short-term and long-term impacts
 
-### Phase 3: 가정 검토
+### Phase 3: Review Assumptions
 
-1. **암묵적 가정 명확화**
+1. **Clarify Implicit Assumptions**
    ```
-   이 답변/해결책은 다음과 같은 가정을 바탕으로 합니다:
+   This answer/solution is based on the following assumptions:
    
-   가정 1: [가정 내용]
-   - 이 가정이 참일 확률: [높음/중간/낮음]
-   - 이 가정이 틀리다면: [대안적 시나리오]
+   Assumption 1: [Assumption content]
+   - Probability of this assumption being true: [High/Medium/Low]
+   - If this assumption is false: [Alternative scenario]
    
-   가정 2: [가정 내용]
-   - 이 가정이 참일 확률: [높음/중간/낮음]
-   - 이 가정이 틀리다면: [대안적 시나리오]
+   Assumption 2: [Assumption content]
+   - Probability of this assumption being true: [High/Medium/Low]
+   - If this assumption is false: [Alternative scenario]
    ```
 
-2. **시나리오 분석**
-   | 시나리오 | 핵심 가정 변화 | 결과 예측 | 대응 방안 |
-   |---------|--------------|----------|----------|
-   | 최선 | ... | ... | ... |
-   | 중간 | ... | ... | ... |
-   | 최악 | ... | ... | ... |
+2. **Scenario Analysis**
+   | Scenario | Key Assumption Change | Predicted Outcome | Response Plan |
+   |----------|-----------------------|-------------------|---------------|
+   | Best | ... | ... | ... |
+   | Intermediate | ... | ... | ... |
+   | Worst | ... | ... | ... |
 
-### Phase 4: 종합적 판단
+### Phase 4: Comprehensive Judgment
 
-1. **증거 가중치 평가**
-   - 각 논점의 증거 강도 평가
-   - 불확실성 수준 명시
+1. **Evaluate Evidence Weight**
+   - Assess the strength of evidence for each point
+   - Specify the level of uncertainty
 
-2. **최종 결론 도출**
+2. **Derive Final Conclusion**
    ```markdown
-   ## 🎯 심사 숙고 결과
+   ## 🎯 Deliberation Results
    
-   ### 분석 대상
-   [문제/의사결정 설명]
+   ### Subject of Analysis
+   [Problem/Decision description]
    
-   ### 검토 과정
-   - [x] 간과한 정보 점검
-   - [x] 인지적 편향 확인
-   - [x] 이해관계자 입장 고려
-   - [x] 가정 검토
+   ### Review Process
+   - [x] Check for overlooked information
+   - [x] Identify cognitive biases
+   - [x] Consider stakeholder positions
+   - [x] Review assumptions
    
-   ### 핵심 통찰
+   ### Key Insights
    1. ...
    2. ...
    
-   ### 권고 사항
-   [결론 및 권고]
+   ### Recommendations
+   [Conclusion and Recommendations]
    
-   ### 주의사항 및 제약
+   ### Cautions and Constraints
    - ...
    
-   ### 추가 고려 필요 사항
+   ### Matters for Further Consideration
    - ...
    ```
 
-## 💡 프롬프트 템플릿
+## 💡 Prompt Template
 
 ```
-다음 문제에 대해 심사 숙고하여 답변해주세요:
+Please answer the following problem through deep deliberation:
 
-[문제/의사결정 설명]
+[Problem/Decision Description]
 
-답변 시 다음을 포함해주세요:
-1. 이 문제에서 간과하기 쉬운 중요한 정보가 있다면 먼저 파악해주세요
-2. 관련된 다양한 이해관계자들의 입장을 각각 대변해주세요
-3. 당신의 답변이 기반하고 있는 암묵적 가정을 명확히 하고, 
-   그 가정이 틀릴 경우 어떤 대안적 시나리오가 필요한지 설명해주세요
-4. 최종적으로 균형 잡힌 권고를 제시해주세요
+Please include the following in your answer:
+1. Identify any important information that might be easily overlooked in this problem.
+2. Represent the positions of various stakeholders involved.
+3. Clarify the implicit assumptions your response is based on, and explain what alternative scenarios would be needed if those assumptions were wrong.
+4. Finally, provide a balanced recommendation.
 ```
 
-## ✅ 체크리스트
+## ✅ Checklist
 
-심사 숙고 기법 적용 시 확인사항:
+Items to check when applying the deliberation technique:
 
-- [ ] 간과한 정보를 파악했는가?
-- [ ] 인지적 편향을 점검했는가?
-- [ ] 다양한 이해관계자 입장을 고려했는가?
-- [ ] 암묵적 가정을 명확히 했는가?
-- [ ] 가정이 틀릴 경우의 대안을 제시했는가?
-- [ ] 불확실성 수준을 명시했는가?
+- [ ] Has overlooked information been identified?
+- [ ] Have cognitive biases been checked?
+- [ ] Have various stakeholder positions been considered?
+- [ ] Have implicit assumptions been clarified?
+- [ ] Have alternatives for wrong assumptions been provided?
+- [ ] Has the level of uncertainty been specified?

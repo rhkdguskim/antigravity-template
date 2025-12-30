@@ -1,165 +1,164 @@
 ---
-description: 신뢰도 임계값(Confidence Threshold) 기법으로 LLM의 할루시네이션을 방지하고 답변의 신뢰도를 명시적으로 평가합니다.
+description: Confidence Threshold technique prevents LLM hallucinations and explicitly evaluates the reliability of responses.
 ---
 
-LLM이 **자신의 지식 경계를 인식하고 평가**하도록 하는 메타인지적 접근으로, 일정 수준 이상의 확신이 있을 때만 답변하거나 신뢰도를 명시하도록 요청하는 워크플로우입니다.
+This workflow is a metacognitive approach that allows for the LLM to **recognize and evaluate its own knowledge boundaries**, asking it to respond only when it has a certain level of confidence or to specify its confidence level.
 
-## 🎯 적용 상황
+## 🎯 Application Situations
 
-- 사실 관계 확인이 중요한 질문
-- 전문적인 조언이 필요한 상황
-- 할루시네이션 위험이 높은 도메인
-- 의사결정에 사용될 정보 요청
+- Questions where fact-checking is important
+- Situations requiring professional advice
+- Domains with a high risk of hallucinations
+- Requesting information to be used in decision-making
 
 ## 🔄 Workflow Process
 
-### Phase 1: 명확한 임계값 설정
+### Phase 1: Set Clear Thresholds
 
-1. **신뢰도 기준 정의**
+1. **Define Confidence Criteria**
    ```
-   다음 질문에 답변해주세요. 단, 다음 조건을 따라주세요:
+   Please answer the following question. However, follow these conditions:
    
-   - 90% 이상 확신하는 경우에만 단정적으로 답변
-   - 70-90% 확신하는 경우 "높은 확률로"라고 표현
-   - 50-70% 확신하는 경우 "아마도" 또는 "추정컨대"라고 표현
-   - 50% 미만이면 "확실하지 않지만"이라고 전제
-   - 모르는 경우 솔직히 "모르겠습니다"라고 답변
+   - Answer definitively only if you are over 90% certain.
+   - If 70-90% certain, use the expression "High probability that...".
+   - If 50-70% certain, use the expression "Maybe" or "Presumably...".
+   - If less than 50% certain, preface with "It's not certain, but...".
+   - If you don't know, honestly answer "I don't know".
    ```
 
-2. **기본 문구 활용**
-   | 문구 | 용도 |
-   |------|------|
-   | "확실히 알고 있다면" | 고확신 답변만 요청 |
-   | "자신 있게 대답할 수 있다면" | 확신 있는 답변만 요청 |
-   | "추측이라면 추측이라고 밝혀주세요" | 불확실성 표현 유도 |
+2. **Utilize Basic Phrases**
+   | Phrase | Purpose |
+   |--------|---------|
+   | "If you know for sure" | Requesting only high-confidence answers |
+   | "If you can answer with confidence" | Requesting only confident answers |
+   | "If it's a guess, please state it's a guess" | Inducing expressions of uncertainty |
 
-### Phase 2: 불확실성 표현 요청
+### Phase 2: Request Expressions of Uncertainty
 
-1. **명시적 불확실성 허용**
+1. **Allow Explicit Uncertainty**
    ```
-   이 질문에 대해:
-   - 확실하지 않은 부분이 있다면 "모르겠습니다"라고 말해도 됩니다
-   - 부분적으로만 알고 있다면 아는 부분과 모르는 부분을 구분해주세요
-   - 출처가 불확실하다면 그 점을 명시해주세요
+   Regarding this question:
+   - If there are parts you are unsure of, you may say "I don't know".
+   - If you only know partially, please distinguish between what you know and what you don't.
+   - If the source is uncertain, please specify that.
    ```
 
-2. **지식 한계 인식**
-   - 학습 데이터 기준일 이후 정보 불확실
-   - 특정 도메인 전문 지식의 한계
-   - 지역/언어별 정보 차이
+2. **Recognizing Knowledge Limits**
+   - Information uncertainty after the training data cutoff date
+   - Limits of specialized knowledge in specific domains
+   - Regional/language-based information differences
 
-### Phase 3: 신뢰도 평가 요청
+### Phase 3: Request Confidence Evaluation
 
-1. **신뢰도 수준 표시**
+1. **Display Confidence Level**
    ```
-   답변과 함께 다음 형식으로 신뢰도를 표시해주세요:
+   Please display the confidence level along with your answer in the following format:
    
-   [답변 내용]
+   [Answer Content]
    
    ---
-   📊 신뢰도 평가:
-   - 전체 신뢰도: [1-10 점수] / 10
-   - 정보 출처 확실성: [높음/중간/낮음]
-   - 최신성: [확인됨/미확인/오래된 정보 가능성]
-   - 추가 확인 권장: [예/아니오]
+   📊 Confidence Evaluation:
+   - Overall Confidence: [1-10 Score] / 10
+   - Information Source Certainty: [High/Medium/Low]
+   - Recency: [Confirmed/Unverified/Possible outdated information]
+   - Further Verification Recommended: [Yes/No]
    ```
 
-2. **영역별 신뢰도 분류**
-   | 영역 | 신뢰도 | 이유 |
-   |------|--------|------|
-   | 기본 개념 | 높음 | 일반적으로 알려진 정보 |
-   | 최신 동향 | 낮음 | 학습 데이터 기준일 이후 변경 가능 |
-   | 특정 사례 | 중간 | 개별 상황에 따라 다를 수 있음 |
+2. **Categorize Confidence by Area**
+   | Area | Confidence | Reason |
+   |------|------------|--------|
+   | Basic Concepts | High | Generally known information |
+   | Recent Trends | Low | Possible changes after training data cutoff |
+   | Specific Cases | Medium | May vary depending on individual situations |
 
-### Phase 4: 다중 프로필 교차 검증
+### Phase 4: Multi-Profile Cross-Verification
 
-1. **역할별 응답 비교**
+1. **Compare Responses by Role**
    ```
-   다음 질문에 대해 세 가지 다른 관점에서 답변해주세요:
+   Please answer the following question from three different perspectives:
    
-   1. 해당 분야 전문가로서
-   2. 비판적 검토자로서
-   3. 초보자 관점에서
+   1. As an expert in the field
+   2. As a critical reviewer
+   3. From a beginner's perspective
    
-   각 관점의 답변에서 일치하는 부분과 다른 부분을 정리하고,
-   교차 검증을 통한 최종 신뢰도를 평가해주세요.
+   Summarize the consistent and differing parts of each perspective's answer, and evaluate the final confidence through cross-verification.
    ```
 
-2. **불일치 분석**
-   - 관점별 답변의 공통점 = 높은 신뢰도
-   - 관점별 답변의 차이점 = 추가 확인 필요
+2. **Discrepancy Analysis**
+   - Commonalities in answers across perspectives = High confidence
+   - Differences in answers across perspectives = Additional verification needed
 
-## 💡 프롬프트 템플릿
+## 💡 Prompt Template
 
-### 기본 템플릿
+### Basic Template
 ```
-다음 질문에 답변해주세요:
+Please answer the following question:
 
-[질문]
+[Question]
 
-답변 시 다음을 포함해주세요:
-1. 확실한 정보와 불확실한 추정을 구분해서 표시
-2. 각 주장에 대한 신뢰도 수준 (높음/중간/낮음)
-3. 확인이 필요한 사항이 있다면 명시
-```
-
-### 전문적 조언 요청 시
-```
-[전문 분야] 관련 질문입니다:
-
-[질문]
-
-- 확실히 알고 있는 것만 답변해주세요
-- 추측이나 일반화가 필요한 부분은 명확히 구분해주세요
-- 전문가 확인이 필요한 사항은 "전문가 확인 권장"으로 표시해주세요
-- 최신 정보 확인이 필요하면 그 점을 언급해주세요
+Please include the following in your answer:
+1. Clearly distinguish between certain information and uncertain estimations.
+2. Confidence level for each claim (High/Medium/Low).
+3. Specify any matters that require verification.
 ```
 
-### 교차 검증 템플릿
+### When Requesting Professional Advice
 ```
-다음 정보의 정확성을 검증해주세요:
+This is a question regarding [Professional Field]:
 
-[검증할 정보]
+[Question]
 
-1. 이 정보가 사실인지 평가해주세요
-2. 확실한 부분과 불확실한 부분을 구분해주세요
-3. 반대 증거나 다른 관점이 있다면 제시해주세요
-4. 최종 신뢰도 점수를 1-10으로 평가해주세요
+- Please answer only what you know for certain.
+- Clearly distinguish parts that require guessing or generalization.
+- For matters requiring expert confirmation, please mark them as "Expert confirmation recommended".
+- If latest information verification is needed, please mention that.
 ```
 
-## 📊 출력 형식
+### Cross-Verification Template
+```
+Please verify the accuracy of the following information:
+
+[Information to verify]
+
+1. Evaluate whether this information is factually true.
+2. Distinguish between certain and uncertain parts.
+3. Present any counter-evidence or differing perspectives.
+4. Rate the final confidence score from 1-10.
+```
+
+## 📊 Output Format
 
 ```markdown
-## 📋 답변
+## 📋 Answer
 
-[답변 내용]
+[Answer content]
 
 ---
 
-## 📊 신뢰도 평가
+## 📊 Confidence Evaluation
 
-| 항목 | 평가 | 설명 |
-|------|------|------|
-| 전체 신뢰도 | ⭐⭐⭐⭐☆ (8/10) | [이유] |
-| 정보 출처 | 높음 | [출처 유형] |
-| 최신성 | 중간 | [기준일 정보] |
-| 전문성 요구 | 낮음 | [일반 상식 수준] |
+| Item | Evaluation | Description |
+|------|------------|-------------|
+| Overall Confidence | ⭐⭐⭐⭐☆ (8/10) | [Reason] |
+| Information Source | High | [Source type] |
+| Recency | Medium | [Reference date information] |
+| Expertise Required | Low | [General common sense level] |
 
-### ⚠️ 주의 사항
-- [불확실한 부분 1]
-- [불확실한 부분 2]
+### ⚠️ Cautions
+- [Uncertain part 1]
+- [Uncertain part 2]
 
-### ✅ 확인된 정보
-- [확실한 정보 1]
-- [확실한 정보 2]
+### ✅ Confirmed Information
+- [Certain information 1]
+- [Certain information 2]
 
-### 🔍 추가 확인 권장
-- [전문가 확인 필요 사항]
-- [최신 정보 확인 필요 사항]
+### 🔍 Recommended for Further Verification
+- [Items requiring expert confirmation]
+- [Items requiring latest information verification]
 ```
 
-## ⚠️ 주의사항
+## ⚠️ Notes
 
-- 신뢰도 표시는 모델의 자가 평가이므로 절대적이지 않음
-- 중요한 의사결정에는 반드시 외부 검증 병행
-- 할루시네이션 완전 방지는 불가능하므로 크리티컬한 정보는 확인 필수
+- Confidence levels are self-evaluations by the model and are not absolute.
+- Always perform external verification for important decision-making.
+- Since hallucinations cannot be completely prevented, critical information must be double-checked.

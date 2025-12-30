@@ -1,207 +1,207 @@
 ---
-description: 개념 매핑(Concept Mapping) 기법으로 서로 다른 지식 영역 간의 연결고리를 발견하여 창의적 통찰을 도출합니다.
+description: Concept Mapping technique discovers connections between different knowledge domains to derive creative insights.
 ---
 
-**서로 다른 지식 영역 간의 연결고리를 발견**하여 사고의 지평을 넓히는 인지 도구입니다. 한 영역의 개념을 다른 영역에 연결하거나 대응시켜 새로운 통찰을 얻습니다.
+This workflow is a powerful cognitive tool that expands thinking horizons by **discovering connections between different knowledge domains**. It links or maps concepts from one domain to another to gain new insights.
 
-## 🎯 적용 상황
+## 🎯 Application Situations
 
-- 비즈니스 전략 수립
-- 창의적 문제 해결
-- 교육 및 학습
-- 제품/서비스 혁신
-- 시스템 설계
-- 조직 변화 관리
+- Business strategy development
+- Creative problem solving
+- Education and learning
+- Product/Service innovation
+- System design
+- Organizational change management
 
 ## 🔄 Workflow Process
 
-### Phase 1: 매핑 구조 설정
+### Phase 1: Set Mapping Structure
 
-1. **기본 매핑 공식**
+1. **Basic Mapping Formula**
    ```
-   [출발 도메인] + [매핑할 개념] → [목표 도메인] + [원하는 결과물 형태]
-   ```
-
-2. **매핑 요소 정의**
-   | 요소 | 설명 | 예시 |
-   |------|------|------|
-   | 출발 도메인 | 개념을 가져올 원본 영역 | 생물학, 음악, 스포츠 |
-   | 매핑할 개념 | 적용할 핵심 원리/패턴 | 자연선택, 하모니, 팀워크 |
-   | 목표 도메인 | 개념을 적용할 대상 영역 | 경영, 소프트웨어, 조직 |
-   | 결과물 형태 | 원하는 출력 형식 | 프레임워크, 전략, 가이드 |
-
-### Phase 2: 맥락 정보 제공
-
-1. **매핑 목적 명확화**
-   ```
-   이 매핑의 목적:
-   - 해결하고자 하는 문제: [문제 설명]
-   - 기대하는 통찰: [기대 내용]
-   - 활용 계획: [활용 방안]
+   [Source Domain] + [Concept to Map] → [Target Domain] + [Desired Output Form]
    ```
 
-2. **배경 설명**
-   - 출발 도메인의 핵심 개념 설명
-   - 목표 도메인의 현재 상황
-   - 매핑이 필요한 이유
+2. **Define Mapping Elements**
+   | Element | Description | Example |
+   |---------|-------------|---------|
+   | Source Domain | The original area where the concept is from | Biology, Music, sports |
+   | Concept to Map | Core principle/pattern to apply | Natural selection, Harmony, Teamwork |
+   | Target Domain | The target area where the concept is applied | Management, Software, Organization |
+   | Output Form | Desired output format | Framework, Strategy, Guide |
 
-### Phase 3: 분석 수준 지정
+### Phase 2: Provide Contextual Information
 
-1. **깊이와 범위 설정**
+1. **Clarify Mapping Purpose**
    ```
-   분석 수준:
-   - 개념적 수준: 추상적 원리만 추출
-   - 구조적 수준: 구조와 관계까지 매핑
-   - 운영적 수준: 구체적 실행 방안까지 도출
-   ```
-
-2. **매핑 범위**
-   - 핵심 개념만 vs 세부 요소까지
-   - 단일 측면 vs 다차원 분석
-
-### Phase 4: 다중 도메인 연결 (선택)
-
-1. **복합 매핑**
-   ```
-   [도메인 A]의 [개념 X]와 [도메인 B]의 [개념 Y]를 
-   [도메인 C]에 결합 적용하여 [결과물 형태]를 도출
+   Purpose of this mapping:
+   - Problem to be solved: [Problem description]
+   - Expected insight: [Expected content]
+   - Utilization plan: [Plan for usage]
    ```
 
-2. **교차 통찰 발굴**
-   - 여러 도메인의 공통 패턴 발견
-   - 도메인 간 상호작용 분석
+2. **Background Explanation**
+   - Explanation of core concepts in the source domain
+   - Current situation in the target domain
+   - Reason why mapping is needed
 
-### Phase 5: 역방향 매핑 (심화)
+### Phase 3: Specify Analysis Level
 
-1. **역매핑 수행**
+1. **Set Depth and Scope**
    ```
-   [목표 도메인]의 성공 사례/원리를 거꾸로 
-   [출발 도메인]에 적용했을 때 얻을 수 있는 시사점은?
+   Analysis Level:
+   - Conceptual Level: Extracting only abstract principles
+   - Structural Level: Mapping down to structures and relationships
+   - Operational Level: Deriving specific action plans
    ```
 
-2. **피드백 루프 발견**
-   - 양방향 매핑의 시너지
-   - 시스템적 사고 강화
+2. **Mapping Scope**
+   - Core concepts only vs. including detailed elements
+   - Single aspect vs. multi-dimensional analysis
 
-## 💡 프롬프트 템플릿
+### Phase 4: Link Multiple Domains (Optional)
 
-### 기본 템플릿
+1. **Compound Mapping**
+   ```
+   Combine [Concept X] from [Domain A] and [Concept Y] from [Domain B] 
+   to apply to [Domain C] to derive [Output Form].
+   ```
+
+2. **Discover Cross-Insights**
+   - Discover common patterns across several domains
+   - Analyze interactions between domains
+
+### Phase 5: Reverse Mapping (In-depth)
+
+1. **Perform Reverse Mapping**
+   ```
+   Apply success cases/principles from the [Target Domain] back to the [Source Domain]. 
+   What implications can be gained?
+   ```
+
+2. **Discover Feedback Loops**
+   - Synergy of bidirectional mapping
+   - Enhancing systems thinking
+
+## 💡 Prompt Template
+
+### Basic Template
 ```
-[출발 도메인]의 [매핑할 개념] 개념을 [목표 도메인]에 매핑하여 
-[원하는 결과물 형태]를 제시해주세요.
+Please map the concept of [Concept to Map] from [Source Domain] to [Target Domain] 
+and present [Desired Output Form].
 
-예) 생물학의 자연선택 개념을 기업경영에 매핑하여 
-    비즈니스 전략 수립에 활용할 수 있는 프레임워크로 제시해주세요.
-```
-
-### 상세 템플릿
-```
-다음 개념 매핑을 수행해주세요:
-
-## 매핑 정보
-- 출발 도메인: [원본 영역]
-- 핵심 개념: [매핑할 개념]
-- 목표 도메인: [적용할 영역]
-- 분석 수준: [개념적/구조적/운영적]
-
-## 목적
-[이 매핑을 통해 얻고자 하는 것]
-
-## 요청 사항
-1. 출발 도메인의 핵심 원리를 설명해주세요
-2. 목표 도메인에 어떻게 대응되는지 보여주세요
-3. 매핑을 통해 발견된 새로운 통찰을 정리해주세요
-4. 실제 적용 가능한 프레임워크/전략을 제안해주세요
+E.g.) Map the concept of natural selection from biology to corporate management 
+      and present it as a framework for business strategy formulation.
 ```
 
-### 다중 도메인 템플릿
+### Detailed Template
 ```
-다음 두 개념을 결합하여 새로운 통찰을 도출해주세요:
+Please perform the following concept mapping:
 
-- 도메인 A ([영역 1])의 [개념 1]
-- 도메인 B ([영역 2])의 [개념 2]
+## Mapping Information
+- Source Domain: [Origin area]
+- Core Concept: [Concept to map]
+- Target Domain: [Target area]
+- Analysis Level: [Conceptual/Structural/Operational]
 
-이 두 개념의 공통 원리와 상호작용을 분석하고,
-[목표 도메인]에 적용할 수 있는 통합 프레임워크를 제안해주세요.
+## Purpose
+[What you hope to achieve through this mapping]
+
+## Requests
+1. Explain the core principles of the source domain.
+2. Show how they correspond to the target domain.
+3. Organize new insights discovered through mapping.
+4. Propose a framework/strategy that is actually applicable.
 ```
 
-### 역방향 매핑 템플릿
+### Multi-Domain Template
 ```
-[목표 도메인]의 성공 원리를 [출발 도메인]에 역으로 적용했을 때:
+Please combine the following two concepts to derive new insights:
 
-1. 어떤 새로운 관점을 얻을 수 있나요?
-2. 기존 이해와 다른 시사점은 무엇인가요?
-3. 양방향 매핑에서 발견되는 피드백 루프가 있나요?
+- [Concept 1] from Domain A ([Area 1])
+- [Concept 2] from Domain B ([Area 2])
+
+Analyze the common principles and interactions of these two concepts, 
+and propose an integrated framework applicable to [Target Domain].
 ```
 
-## 📊 출력 형식
+### Reverse Mapping Template
+```
+When success principles from [Target Domain] are reverse-applied to [Source Domain]:
+
+1. What new perspectives can be gained?
+2. What implications differ from the existing understanding?
+3. Are there feedback loops discovered in the bidirectional mapping?
+```
+
+## 📊 Output Format
 
 ```markdown
-## 🗺️ 개념 매핑 결과
+## 🗺️ Concept Mapping Results
 
-### 매핑 개요
-| 요소 | 내용 |
-|------|------|
-| 출발 도메인 | [영역] |
-| 핵심 개념 | [개념] |
-| 목표 도메인 | [영역] |
-| 분석 수준 | [수준] |
+### Mapping Overview
+| Element | Content |
+|---------|---------|
+| Source Domain | [Domain] |
+| Core Concept | [Concept] |
+| Target Domain | [Domain] |
+| Analysis Level | [Level] |
 
-### 출발 도메인 분석
-[핵심 원리 설명]
+### Source Domain Analysis
+[Explanation of core principles]
 
-### 매핑 대응표
-| 출발 도메인 요소 | 목표 도메인 대응 | 매핑 근거 |
-|-----------------|-----------------|----------|
-| [요소 1] | [대응 1] | [근거] |
-| [요소 2] | [대응 2] | [근거] |
-| [요소 3] | [대응 3] | [근거] |
+### Mapping Correspondence Table
+| Source Domain Element | Target Domain Correspondence | Mapping Rationale |
+|-----------------------|------------------------------|-------------------|
+| [Element 1] | [Correspondence 1] | [Rationale] |
+| [Element 2] | [Correspondence 2] | [Rationale] |
+| [Element 3] | [Correspondence 3] | [Rationale] |
 
-### 핵심 통찰
-1. [통찰 1]: [설명]
-2. [통찰 2]: [설명]
-3. [통찰 3]: [설명]
+### Key Insights
+1. [Insight 1]: [Explanation]
+2. [Insight 2]: [Explanation]
+3. [Insight 3]: [Explanation]
 
-### 적용 프레임워크
-[구체적인 프레임워크 또는 전략]
+### Application Framework
+[Specific framework or strategy]
 
-### 실행 방안
-1. [단계 1]
-2. [단계 2]
-3. [단계 3]
+### Action Plan
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
 
-### 주의사항 및 한계
-- 매핑의 한계: [한계점]
-- 적용 시 고려사항: [고려사항]
+### Cautions and Limitations
+- Mapping Limitations: [Limit point]
+- Considerations for application: [Considerations]
 ```
 
-## 🎓 매핑 예시
+## 🎓 Mapping Examples
 
-### 예시 1: 생태계 → 비즈니스
+### Example 1: Ecosystem → Business
 ```
-자연 생태계의 "생태적 지위(Ecological Niche)" 개념을 
-스타트업 시장 진입 전략에 매핑
+Mapping the concept of "Ecological Niche" from natural ecosystems 
+to startup market entry strategy.
 
-결과: 
-- 시장의 "빈 틈새(Empty Niche)" 발견 전략
-- 경쟁 회피를 위한 차별화 포지셔닝
-- 공생 관계를 통한 파트너십 전략
-```
-
-### 예시 2: 음악 → 팀 관리
-```
-오케스트라 지휘의 "조화(Harmony)" 원리를
-애자일 팀 관리에 매핑
-
-결과:
-- 개인 역량과 팀 협업의 균형
-- 리더의 조율자 역할 정의
-- 리허설(Sprint Planning) 프로세스 설계
+Results:
+- Strategy for discovering "Empty Niches" in the market
+- Differentiation positioning to avoid competition
+- Partnership strategy through symbiotic relationships
 ```
 
-## ⚠️ 주의사항
+### Example 2: Music → Team Management
+```
+Mapping the principle of "Harmony" from orchestral conducting 
+to agile team management.
 
-- 표면적 유사성에만 집중하지 말고 깊은 구조적 유사성 탐구
-- 도메인 간 차이점도 명확히 인식
-- 매핑은 비유이므로 절대적 진리가 아님을 인식
-- "익숙한 것을 낯설게, 낯선 것을 익숙하게" 만드는 과정임을 기억
+Results:
+- Balance between individual capabilities and team collaboration
+- Defining the leader's role as a coordinator
+- Designing the rehearsal (Sprint Planning) process
+```
+
+## ⚠️ Notes
+
+- Don't just focus on superficial similarities; explore deep structural similarities.
+- Clearly recognize differences between domains as well.
+- Recognize that mapping is a metaphor and not an absolute truth.
+- Remember that it's a process of "making the familiar strange and the strange familiar".

@@ -1,151 +1,151 @@
 ---
-description: Chain of Thought(CoT) 기법으로 복잡한 문제를 단계적으로 추론하여 논리적인 해결책을 도출합니다.
+description: Chain of Thought (CoT) technique improves complex problem-solving abilities by structuring thought processes similarly to human logical reasoning.
 ---
 
-**인간의 논리적 추론 과정과 유사하게 구조화**하여 복잡한 문제 해결 능력을 끌어올리는 워크플로우입니다.
+This workflow enhances complex problem-solving abilities by **structuring thought processes similarly to human logical reasoning**, solving problems step-by-step.
 
-## 🎯 적용 상황
+## 🎯 Application Situations
 
-- 수학적/논리적 문제 해결
-- 복잡한 비즈니스 분석
-- 기술적 의사결정
-- 다단계 추론이 필요한 작업
+- Solving mathematical/logical problems
+- Complex business analysis
+- Technical decision making
+- Tasks requiring multi-step reasoning
 
-> 💡 **참고**: OpenAI o1/o3, DeepSeek R1 등 추론 특화 모델은 내장된 CoT 기능이 있어 별도 프롬프트가 불필요할 수 있습니다.
+> 💡 **Note**: Reasoning-specialized models like OpenAI o1/o3 and DeepSeek R1 have built-in CoT capabilities, so a separate prompt may not be necessary.
 
 ## 🔄 Workflow Process
 
-### Phase 1: 단계 설정하기
+### Phase 1: Set Steps
 
-1. **문제 분해**
-   - 전체 문제를 논리적으로 연결된 하위 단계로 분해
-   - 각 단계에 명확한 번호나 글머리 기호 부여
+1. **Decompose the Problem**
+   - Logically break down the overall problem into sub-steps
+   - Assign clear numbers or bullet points to each step
 
-2. **단계 설계 원칙**
-   | 원칙 | 설명 |
-   |------|------|
-   | 논리적 연결성 | 각 단계가 논리적으로 연결되어 전체 일관성 보장 |
-   | 순차적 난이도 | 쉬운 단계에서 어려운 단계로 점진적 이동 |
-   | 독립+연결 관계 | 각 단계는 독자적 의미가 있으면서 전체의 일부 |
-   | 명확한 구분 | 숫자/글머리 기호로 단계를 명확히 구분 |
+2. **Step Design Principles**
+   | Principle | Description |
+   |-----------|-------------|
+   | Logical Connectivity | Each step must be logically connected to ensure overall consistency. |
+   | Sequential Difficulty | Move incrementally from easy steps to more difficult ones. |
+   | Independent yet Connected | Each step should have its own meaning while functioning as part of the whole. |
+   | Clear Distinction | Use numbers or bullet points to clearly separate steps. |
 
    ```
-   예시 구조:
-   1단계: [가장 기본적인 분석/정보 수집]
-   2단계: [1단계 결과를 바탕으로 한 분석]
-   3단계: [2단계 결과를 바탕으로 한 심화 분석]
-   4단계: [최종 결론 도출]
+   Example Structure:
+   Step 1: [Most basic analysis/information gathering]
+   Step 2: [Analysis based on results from Step 1]
+   Step 3: [In-depth analysis based on results from Step 2]
+   Step 4: [Derivation of final conclusion]
    ```
 
-### Phase 2: 추론 과정 유도하기
+### Phase 2: Guide the Reasoning Process
 
-1. **사고 촉진 표현 사용**
+1. **Use Thought-Promoting Expressions**
    ```
-   - "먼저 ~에 대해 생각해보겠습니다..."
-   - "이를 분석해보면..."
-   - "~를 고려해보면..."
-   - "단계별로 살펴보겠습니다..."
+   - "First, let's think about..."
+   - "Analyzing this..."
+   - "Considering..."
+   - "Let's look at this step-by-step..."
    ```
 
-2. **중간 결과 명시**
-   - 각 단계의 결론을 명확히 서술
-   - 다음 단계로 넘어가기 전 중간 점검
+2. **Specify Intermediate Results**
+   - Clearly describe the conclusion of each step
+   - Perform an intermediate check before moving to the next step
 
-### Phase 3: 메타인지적 접근 활용하기
+### Phase 3: Utilize a Metacognitive Approach
 
-1. **사고 과정 인식 및 설명**
+1. **Recognize and Explain Thought Processes**
    ```
-   나의 추론 과정을 설명하면:
+   Explaining my reasoning process:
    
-   1. 먼저 [X]라는 점을 고려했습니다
-   2. 이것이 [Y]와 어떻게 연결되는지 분석했습니다
-   3. [Z]라는 결론에 도달한 이유는...
+   1. First, I considered [X].
+   2. Then, I analyzed how this connects with [Y].
+   3. The reason for reaching conclusion [Z] is...
    ```
 
-2. **불확실성 표현**
-   - 확실한 부분과 불확실한 부분 구분
-   - 추가 정보가 필요한 영역 명시
+2. **Express Uncertainty**
+   - Distinguish between certain and uncertain parts
+   - Specify areas where additional information is needed
 
-### Phase 4: 반복적 개선
+### Phase 4: Iterative Improvement
 
-1. **답변 검토**
-   - 논리적 비약이 없는지 확인
-   - 각 단계가 이전 단계를 올바르게 기반하는지 검증
+1. **Review the Answer**
+   - Check if there are any logical leaps
+   - Verify if each step correctly builds upon the previous one
 
-2. **필요시 재구성**
-   - 누락된 단계 추가
-   - 불필요한 단계 통합
-   - 논리적 오류 수정
+2. **Reorganize if Necessary**
+   - Add missing steps
+   - Combine redundant steps
+   - Correct logical errors
 
-## 💡 프롬프트 템플릿
+## 💡 Prompt Template
 
-### 기본 템플릿
+### Basic Template
 ```
-다음 문제를 단계별로 생각하며 해결해주세요:
+Please solve the following problem by thinking step-by-step:
 
-[문제 설명]
+[Problem Description]
 
-각 단계에서:
-1. 무엇을 분석하고 있는지 명시해주세요
-2. 그 단계에서 도출한 결론을 설명해주세요
-3. 다음 단계로 넘어가는 논리적 연결고리를 보여주세요
+In each step:
+1. Specify what you are analyzing.
+2. Explain the conclusion reached in that step.
+3. Show the logical link to move to the next step.
 ```
 
-### 마법의 명령어
+### Magic Command
 ```
-"단계별로 생각합니다."
+"Think step by step."
 "Let's think step by step."
 ```
 
-### 상세 템플릿
+### Detailed Template
 ```
-다음 문제를 해결해주세요:
+Please solve the following problem:
 
-[문제 설명]
+[Problem Description]
 
-1단계: 문제를 이해하고 핵심 요소를 파악합니다
-2단계: 필요한 정보와 가정을 정리합니다
-3단계: 각 요소를 분석하고 관계를 파악합니다
-4단계: 분석 결과를 종합하여 결론을 도출합니다
-5단계: 결론을 검증하고 최종 답변을 제시합니다
+Step 1: Understand the problem and identify key elements.
+Step 2: Organize necessary information and assumptions.
+Step 3: Analyze each element and identify relationships.
+Step 4: Synthesize analysis results to derive a conclusion.
+Step 5: Verify the conclusion and present the final answer.
 
-각 단계에서 당신의 사고 과정을 상세히 설명해주세요.
+Please explain your thought process in detail for each step.
 ```
 
-## 📊 출력 형식
+## 📊 Output Format
 
 ```markdown
-## 🧠 Chain of Thought 분석
+## 🧠 Chain of Thought Analysis
 
-### 문제
-[문제 설명]
+### Problem
+[Problem Description]
 
-### 추론 과정
+### Reasoning Process
 
-#### 1단계: [단계 제목]
-[사고 과정 설명]
-→ 중간 결론: [결론]
+#### Step 1: [Step Title]
+[Description of thought process]
+→ Intermediate Conclusion: [Conclusion]
 
-#### 2단계: [단계 제목]
-[사고 과정 설명]
-→ 중간 결론: [결론]
+#### Step 2: [Step Title]
+[Description of thought process]
+→ Intermediate Conclusion: [Conclusion]
 
-#### 3단계: [단계 제목]
-[사고 과정 설명]
-→ 중간 결론: [결론]
+#### Step 3: [Step Title]
+[Description of thought process]
+→ Intermediate Conclusion: [Conclusion]
 
-### 최종 결론
-[최종 답변]
+### Final Conclusion
+[Final Answer]
 
-### 논리 검증
-- 각 단계의 논리적 연결성: ✅
-- 가정의 타당성: ✅
-- 결론의 일관성: ✅
+### Logical Verification
+- Logical connectivity of each step: ✅
+- Validity of assumptions: ✅
+- Consistency of conclusions: ✅
 ```
 
-## ⚠️ 주의사항
+## ⚠️ Notes
 
-- 단계를 너무 많이 나누면 오히려 혼란을 줄 수 있음
-- 각 단계는 의미 있는 진전을 포함해야 함
-- 단순한 문제에는 CoT가 오히려 비효율적일 수 있음
-- 한 번의 시도로 완벽한 답을 기대하지 말고 반복적으로 개선
+- Dividing into too many steps can actually cause confusion.
+- Each step should include meaningful progress.
+- CoT may be inefficient for simple problems.
+- Do not expect a perfect answer on the first try; improve iteratively.

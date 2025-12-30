@@ -1,226 +1,226 @@
 ---
-description: 레드팀(Red Team) 프롬프팅 기법으로 LLM 응답에 도전하여 더 깊고 정확한 답변을 도출하고, 취약점과 편향을 식별합니다.
+description: Red Team prompting technique challenges LLM responses to drive deeper, more accurate answers and to identify potential vulnerabilities or biases.
 ---
 
-LLM의 응답에 **비판적으로 도전하여 더 깊고 정확한 답변을 도출**하는 전략적 접근 방식입니다. 안정성과 신뢰도를 점검하고 잠재된 취약점이나 편향을 식별합니다.
+This workflow is a strategic approach to **critically challenge LLM responses to drive deeper and more accurate answers**. It checks for stability and reliability, identifying potential vulnerabilities or biases.
 
-## 🎯 레드팀이란?
+## 🎯 What is a Red Team?
 
-보안 업계, 군대, 정보기관에서 사용하는 용어로, **공격자의 입장에서 보안 취약점을 찾아내고 테스트하는 팀**을 의미합니다. AI 맥락에서는 모델의 응답을 비판적으로 검토하여 개선하는 방법론입니다.
+A term used in the security industry, military, and intelligence agencies, referring to a **team that finds and tests security vulnerabilities from an attacker's perspective**. In the AI context, it's a methodology for critically reviewing and improving the model's responses.
 
 ## 🔄 Workflow Process
 
-### Phase 1: 초기 응답 분석
+### Phase 1: Analysis of Initial Response
 
-1. **첫 응답 획득**
+1. **Obtain Initial Response**
    ```
-   [원래 질문/요청]에 대한 답변을 먼저 받습니다.
+   First, receive an answer to the [Original Question/Request].
    ```
 
-2. **비판적 검토**
-   | 검토 항목 | 질문 |
-   |----------|------|
-   | 논리적 비약 | 결론으로 가는 과정에 빠진 단계가 있는가? |
-   | 근거 부족 | 주장을 뒷받침하는 증거가 충분한가? |
-   | 편향 가능성 | 특정 관점에 치우쳐 있지 않은가? |
-   | 과잉 일반화 | 제한된 정보로 과도한 결론을 내렸는가? |
-   | 맹점 | 고려하지 않은 중요한 요소가 있는가? |
+2. **Critical Review**
+   | Review Item | Question |
+   |-------------|----------|
+   | Logical Leap | Are there missing steps in the process of reaching the conclusion? |
+   | Insufficient Evidence | Is there enough evidence to support the claim? |
+   | Potential Bias | Is it biased towards a specific viewpoint? |
+   | Over-generalization | Has it made excessive conclusions based on limited information? |
+   | Blind Spot | Are there important factors that were not considered? |
 
-### Phase 2: 핵심 가정 파악
+### Phase 2: Identify Core Assumptions
 
-1. **가정 추출**
+1. **Extract Assumptions**
    ```
-   이 답변이 기반하고 있는 핵심 가정들:
+   Core assumptions this answer is based on:
    
-   1. [가정 1]: [근거 수준: 강함/중간/약함]
-   2. [가정 2]: [근거 수준: 강함/중간/약함]
-   3. [가정 3]: [근거 수준: 강함/중간/약함]
+   1. [Assumption 1]: [Evidence level: Strong/Medium/Weak]
+   2. [Assumption 2]: [Evidence level: Strong/Medium/Weak]
+   3. [Assumption 3]: [Evidence level: Strong/Medium/Weak]
    ```
 
-2. **도전 질문 구성**
-   - 각 가정에 대해 "만약 이 가정이 틀리다면?" 질문 준비
-   - 가정을 뒤집었을 때의 결과 예상
+2. **Compose Challenge Questions**
+   - Prepare "What if this assumption is wrong?" questions for each assumption.
+   - Predict outcomes if assumptions are reversed.
 
-### Phase 3: 전략적 질문 설계
+### Phase 3: Design Strategic Questions
 
-1. **반대 의견 제시**
+1. **Present Counter-arguments**
    ```
-   당신의 답변에 반대하는 입장을 취해보겠습니다:
+   Let's take a position opposing your answer:
    
-   - 반론 1: [반대 주장]
-   - 반론 2: [반대 주장]
-   - 반론 3: [반대 주장]
+   - Counter-argument 1: [Opposing claim]
+   - Counter-argument 2: [Opposing claim]
+   - Counter-argument 3: [Opposing claim]
    
-   이 반론들에 대해 어떻게 대응하시겠습니까?
+   How would you respond to these counter-arguments?
    ```
 
-2. **"왜-왜-왜" 질문 (5 Whys)**
+2. **"Why-Why-Why" Questions (5 Whys)**
    ```
-   [주장/결론]
-   ↓ 왜?
-   [이유 1]
-   ↓ 왜?
-   [이유 2]
-   ↓ 왜?
-   [이유 3]
-   ↓ 왜?
-   [이유 4]
-   ↓ 왜?
-   [근본 원인/핵심 가정]
-   ```
-
-3. **관점 전환 질문**
-   ```
-   이 답변을 [반대 입장/비평가/경쟁자]의 관점에서 본다면:
-   - 어떤 문제점이 보일까요?
-   - 어떤 대안을 제시할까요?
-   - 어떤 점을 강조할까요?
+   [Claim/Conclusion]
+   ↓ Why?
+   [Reason 1]
+   ↓ Why?
+   [Reason 2]
+   ↓ Why?
+   [Reason 3]
+   ↓ Why?
+   [Reason 4]
+   ↓ Why?
+   [Root Cause/Core Assumption]
    ```
 
-### Phase 4: 점진적 심화
-
-1. **표면 → 근본 이동**
-   | 단계 | 초점 | 예시 질문 |
-   |------|------|----------|
-   | 1. 표면 | 명시적 주장 | "이 주장이 정말 맞나요?" |
-   | 2. 중간 | 논리 구조 | "이 결론에 도달한 과정은 타당한가요?" |
-   | 3. 깊은 | 암묵적 가정 | "이 전제 자체가 의심스럽지 않나요?" |
-   | 4. 근본 | 세계관/패러다임 | "이 관점 자체가 편향되지 않았나요?" |
-
-2. **대화 발전**
+3. **Perspective Shift Questions**
    ```
-   1라운드: 표면적 반박
-   2라운드: 논리 구조 검토
-   3라운드: 가정 도전
-   4라운드: 대안적 프레임워크 제시
-   5라운드: 종합 및 개선된 결론
+   If we look at this answer from the perspective of [Opponent/Critic/Competitor]:
+   - What problems would be visible?
+   - What alternatives would be proposed?
+   - What points would be emphasized?
    ```
 
-## 💡 프롬프트 템플릿
+### Phase 4: Gradual Deepening
 
-### 기본 레드팀 템플릿
+1. **Surface → Root Movement**
+   | Step | Focus | Example Question |
+   |------|-------|------------------|
+   | 1. Surface | Explicit claims | "Is this claim really correct?" |
+   | 2. Intermediate | Logical structure | "Is the process for reaching this conclusion valid?" |
+   | 3. Deep | Implicit assumptions | "Isn't this premise itself questionable?" |
+   | 4. Fundamental | Worldview/Paradigm | "Isn't this perspective itself biased?" |
+
+2. **Conversation Development**
+   ```
+   Round 1: Superficial refutation
+   Round 2: Review of logical structure
+   Round 3: Challenging assumptions
+   Round 4: Presenting an alternative framework
+   Round 5: Synthesis and improved conclusion
+   ```
+
+## 💡 Prompt Template
+
+### Basic Red Team Template
 ```
-당신이 방금 제시한 답변에 대해 레드팀 분석을 수행해주세요:
+Please perform a Red Team analysis on the answer you just provided:
 
-1. 이 답변의 주요 취약점 3가지를 식별해주세요
-2. 가장 강력한 반론을 제시해주세요
-3. 당신이 놓쳤을 수 있는 관점이나 정보가 있나요?
-4. 이 비판을 바탕으로 답변을 개선해주세요
-```
-
-### 반대 의견 요청 템플릿
-```
-다음 주장/답변에 대해 악마의 대변인(Devil's Advocate) 역할을 해주세요:
-
-[주장/답변]
-
-- 이 주장의 가장 취약한 부분은 무엇인가요?
-- 이 주장에 반대하는 설득력 있는 논거를 제시해주세요
-- 이 주장이 완전히 틀렸다고 가정하면 어떤 대안이 있나요?
-```
-
-### 5 Whys 템플릿
-```
-다음 결론에 대해 "왜-왜-왜" 분석을 수행해주세요:
-
-[결론]
-
-각 "왜"에 대해:
-1. 표면적 이유
-2. 더 깊은 이유
-3. 구조적 원인
-4. 시스템적 요인
-5. 근본 원인
-
-까지 파고들어 주세요.
+1. Identify the top 3 major vulnerabilities of this answer.
+2. Present the strongest counter-argument.
+3. Is there any perspective or information you might have missed?
+4. Please improve the answer based on this critique.
 ```
 
-### 종합 레드팀 템플릿
+### Request for Opposing Opinion Template
 ```
-다음 답변에 대해 포괄적인 레드팀 분석을 수행해주세요:
+Please play the role of a Devil's Advocate for the following claim/answer:
 
-[원래 답변]
+[Claim/Answer]
 
-## 분석 요청
-
-### 1. 취약점 분석
-- 논리적 취약점
-- 정보 부족
-- 편향 가능성
-
-### 2. 반대 관점
-- 주요 반론 3가지
-- 대안적 해석
-
-### 3. 가정 도전
-- 암묵적 가정 목록
-- 각 가정에 대한 반박
-
-### 4. 개선된 답변
-- 비판을 수용한 수정된 결론
-- 남은 불확실성 명시
+- What is the most vulnerable part of this claim?
+- Please present a persuasive argument opposing this claim.
+- Assuming this claim is completely wrong, what alternatives are there?
 ```
 
-## 📊 출력 형식
+### 5 Whys Template
+```
+Please perform a "Five Whys" analysis on the following conclusion:
+
+[Conclusion]
+
+For each "Why":
+1. Superficial reason
+2. Deeper reason
+3. Structural cause
+4. Systemic factors
+5. Root cause
+
+Please dig deep into it.
+```
+
+### Comprehensive Red Team Template
+```
+Please perform a comprehensive Red Team analysis on the following answer:
+
+[Original Answer]
+
+## Analysis Request
+
+### 1. Vulnerability Analysis
+- Logical vulnerabilities
+- Lack of information
+- Potential bias
+
+### 2. Opposing Perspectives
+- Top 3 major counter-arguments
+- Alternative interpretations
+
+### 3. Challenging Assumptions
+- List of implicit assumptions
+- Rebuttal for each assumption
+
+### 4. Improved Answer
+- Revised conclusion accepting the criticism
+- Specifying remaining uncertainties
+```
+
+## 📊 Output Format
 
 ```markdown
-## 🔴 레드팀 분석 결과
+## 🔴 Red Team Analysis Results
 
-### 원본 답변 요약
-[분석 대상 답변 요약]
+### Summary of Original Answer
+[Summary of the answer to be analyzed]
 
-### 취약점 분석
-| 유형 | 문제점 | 심각도 | 개선 방향 |
-|------|--------|--------|----------|
-| 논리적 비약 | [문제] | 높음/중간/낮음 | [방향] |
-| 근거 부족 | [문제] | 높음/중간/낮음 | [방향] |
-| 편향 | [문제] | 높음/중간/낮음 | [방향] |
+### Vulnerability Analysis
+| Type | Problem | Severity | Direction for Improvement |
+|------|---------|----------|---------------------------|
+| Logical Leap | [Problem] | High/Medium/Low | [Direction] |
+| Lack of Evidence | [Problem] | High/Medium/Low | [Direction] |
+| Bias | [Problem] | High/Medium/Low | [Direction] |
 
-### 핵심 가정 및 도전
-1. **가정**: [가정 내용]
-   - **도전**: [반박]
-   - **결과**: [가정이 틀릴 경우]
+### Core Assumptions & Challenges
+1. **Assumption**: [Assumption content]
+   - **Challenge**: [Rebuttal]
+   - **Outcome**: [If the assumption is false]
 
-2. **가정**: [가정 내용]
-   - **도전**: [반박]
-   - **결과**: [가정이 틀릴 경우]
+2. **Assumption**: [Assumption content]
+   - **Challenge**: [Rebuttal]
+   - **Outcome**: [If the assumption is false]
 
-### 주요 반론
-1. [반론 1]: [설명]
-2. [반론 2]: [설명]
-3. [반론 3]: [설명]
+### Major Counter-arguments
+1. [Counter-argument 1]: [Explanation]
+2. [Counter-argument 2]: [Explanation]
+3. [Counter-argument 3]: [Explanation]
 
-### 놓친 관점
-- [관점 1]
-- [관점 2]
+### Missed Perspectives
+- [Perspective 1]
+- [Perspective 2]
 
-### 개선된 답변
-[비판을 수용하여 개선된 결론]
+### Improved Answer
+[Revised conclusion accepting critics]
 
-### 남은 불확실성
-- [불확실한 부분 1]
-- [불확실한 부분 2]
+### Remaining Uncertainties
+- [Uncertain part 1]
+- [Uncertain part 2]
 ```
 
-## 🛡️ 레드팀 vs 블루팀
+## 🛡️ Red Team vs. Blue Team
 
-| 역할 | 레드팀 | 블루팀 |
-|------|--------|--------|
-| 목적 | 취약점 발견 | 방어 강화 |
-| 접근법 | 공격적 비판 | 방어적 보완 |
-| 산출물 | 취약점 목록, 반론 | 개선된 답변, 보강 논거 |
+| Role | Red Team | Blue Team |
+|------|----------|-----------|
+| Purpose | Discover vulnerabilities | Strengthen defense |
+| Approach | Aggressive criticism | Defensive reinforcement |
+| Output | List of vulnerabilities, counter-arguments | Improved answers, reinforced arguments |
 
 ```
-최적의 프로세스:
-1. 블루팀: 초기 답변 생성
-2. 레드팀: 취약점 분석 및 공격
-3. 블루팀: 비판 수용 및 답변 개선
-4. 반복...
+Optimal Process:
+1. Blue Team: Generate initial answer
+2. Red Team: Analyze vulnerabilities and attack
+3. Blue Team: Incorporate criticism and improve answer
+4. Repeat...
 ```
 
-## ⚠️ 주의사항
+## ⚠️ Notes
 
-- 레드팀은 파괴가 아닌 개선이 목적
-- 건설적인 비판과 대안 제시를 함께
-- 모든 비판이 타당한 것은 아니므로 균형 잡힌 판단 필요
-- 무한 회의주의에 빠지지 않도록 주의
+- The purpose of a Red Team is improvement, not destruction.
+- Provide constructive criticism along with alternative suggestions.
+- Not all criticism is valid, so balanced judgment is necessary.
+- Be careful not to fall into infinite skepticism.

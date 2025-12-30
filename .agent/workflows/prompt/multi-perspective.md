@@ -1,121 +1,121 @@
 ---
-description: 다중 관점(Multi-Perspective) 기법으로 복잡한 문제에 대해 다양한 이해관계자의 관점을 분석하여 균형 잡힌 시각을 제공합니다.
+description: Multi-Perspective technique analyzes complex problems from various stakeholder viewpoints to provide a balanced perspective.
 ---
 
-복잡한 문제를 단일 관점이 아닌 **다양한 이해관계자의 시각**에서 분석하여 종합적인 해결책을 도출하는 워크플로우입니다.
+This workflow analyzes complex issues from **multiple stakeholder perspectives** rather than a single viewpoint to derive comprehensive solutions.
 
-## 🎯 적용 분야
+## 🎯 Application Areas
 
-- 비즈니스 전략 수립
-- 정책 결정
-- 사회문제 해결
-- 제품/서비스 설계
-- 조직 내 갈등 해결
+- Business strategy development
+- Policy decision making
+- Social problem solving
+- Product/Service design
+- Conflict resolution within organizations
 
 ## 🔄 Workflow Process
 
-### Phase 1: 문제 정의 및 이해관계자 식별
+### Phase 1: Problem Definition & Stakeholder Identification
 
-1. **문제 명확화**
-   - 분석할 문제나 주제를 명확하게 정의
-   - 문제의 범위와 맥락 파악
+1. **Clarify the Problem**
+   - Clearly define the problem or topic to be analyzed
+   - Understand the scope and context of the issue
 
-2. **이해관계자 맵핑**
-   - 해당 문제와 관련된 모든 이해관계자 목록 작성
-   - 각 이해관계자의 역할과 영향력 파악
+2. **Stakeholder Mapping**
+   - List all stakeholders related to the issue
+   - Identify each stakeholder's role and influence
 
-   | 이해관계자 | 역할 | 이해관계 |
-   |-----------|------|----------|
-   | 예: 고객 | 최종 사용자 | 가격, 품질 |
-   | 예: 직원 | 서비스 제공 | 근무 환경, 급여 |
+   | Stakeholder | Role | Interests |
+   |-------------|------|-----------|
+   | e.g., Customer | End user | Price, Quality |
+   | e.g., Employee | Service provider | Work environment, Salary |
    | ... | ... | ... |
 
-### Phase 2: 관점별 분석 (Few-shot 프롬프팅)
+### Phase 2: Perspective Analysis (Few-shot Prompting)
 
-1. **관점 예시 제공** (2~5개 권장)
+1. **Provide Perspective Examples** (2-5 recommended)
    ```
-   당신은 [이해관계자 1]의 입장입니다. [문제]에 대해:
-   - 이 문제가 당신에게 어떤 영향을 미치나요?
-   - 당신이 원하는 해결 방향은 무엇인가요?
-   - 가장 중요하게 생각하는 가치는 무엇인가요?
+   You are in the position of [Stakeholder 1]. Regarding [Problem]:
+   - How does this problem affect you?
+   - What direction of resolution do you desire?
+   - What are the values you consider most important?
    
-   예시 1) 고객 관점: "저는 좋은 품질의 제품을 합리적인 가격에..."
-   예시 2) 직원 관점: "저는 안정적인 근무 환경에서..."
+   Example 1) Customer Perspective: "I want high-quality products at a reasonable price..."
+   Example 2) Employee Perspective: "I want to work in a stable environment..."
    ```
 
-2. **관점별 의견 수집**
-   - 각 이해관계자 입장에서 문제 분석
-   - 우려사항, 기대사항, 제약조건 정리
+2. **Collect Feedback by Perspective**
+   - Analyze the problem from each stakeholder's perspective
+   - Organize concerns, expectations, and constraints
 
-### Phase 3: 관점 비교 및 충돌 분석
+### Phase 3: Perspective Comparison & Conflict Analysis
 
-1. **공통점 발견**
-   - 모든 관점에서 동의하는 사항 식별
-   - 우선순위가 높은 공통 가치 추출
+1. **Find Common Ground**
+   - Identify points of agreement across all perspectives
+   - Extract high-priority common values
 
-2. **충돌 지점 파악**
-   | 이해관계자 A | 이해관계자 B | 충돌 내용 | 심각도 |
-   |-------------|-------------|----------|--------|
-   | ... | ... | ... | 높음/중간/낮음 |
+2. **Identify Conflict Points**
+   | Stakeholder A | Stakeholder B | Conflict Content | Severity |
+   |---------------|---------------|------------------|----------|
+   | ... | ... | ... | High/Medium/Low |
 
-### Phase 4: 통합적 해결책 도출
+### Phase 4: Derive Integrated Solutions
 
-1. **절충안 모색**
-   - 충돌하는 이해관계를 최대한 수용하는 방안 탐색
-   - Win-Win 시나리오 발굴
+1. **Seek Compromise**
+   - Explore ways to accommodate conflicting interests as much as possible
+   - Discover Win-Win scenarios
 
-2. **해결책 평가**
-   - 각 관점에서 해결책의 수용 가능성 검토
-   - 부작용 및 리스크 분석
+2. **Evaluate Solutions**
+   - Review the feasibility of the solution from each perspective
+   - Analyze side effects and risks
 
-### Phase 5: 결과 종합
+### Phase 5: Synthesis of Results
 
-1. **최종 권고안 작성**
+1. **Write Final Recommendations**
    ```markdown
-   ## 🎯 분석 결과 요약
+   ## 🎯 Analysis Results Summary
    
-   ### 분석 대상
-   [문제/주제 설명]
+   ### Subject of Analysis
+   [Problem/Topic description]
    
-   ### 참여 관점
-   - [x] 관점 1: [이해관계자 역할]
-   - [x] 관점 2: [이해관계자 역할]
-   - [x] 관점 3: [이해관계자 역할]
+   ### Participating Perspectives
+   - [x] Perspective 1: [Stakeholder Role]
+   - [x] Perspective 2: [Stakeholder Role]
+   - [x] Perspective 3: [Stakeholder Role]
    
-   ### 핵심 발견
-   - 공통 가치: ...
-   - 주요 충돌: ...
+   ### Key Findings
+   - Common Values: ...
+   - Major Conflicts: ...
    
-   ### 권고 사항
+   ### Recommendations
    1. ...
    2. ...
    
-   ### 남은 과제
+   ### Remaining Tasks
    - ...
    ```
 
-## 💡 프롬프트 템플릿
+## 💡 Prompt Template
 
 ```
-다음 문제에 대해 다중 관점 분석을 수행해주세요:
+Please perform a multi-perspective analysis on the following problem:
 
-[문제 설명]
+[Problem Description]
 
-다음 이해관계자들의 입장에서 각각 분석해주세요:
-1. [이해관계자 1]: [간단한 설명]
-2. [이해관계자 2]: [간단한 설명]
-3. [이해관계자 3]: [간단한 설명]
+Please analyze from the perspectives of the following stakeholders:
+1. [Stakeholder 1]: [Brief description]
+2. [Stakeholder 2]: [Brief description]
+3. [Stakeholder 3]: [Brief description]
 
-각 관점에서:
-- 핵심 우려사항
-- 원하는 결과
-- 수용 불가능한 조건
+From each perspective:
+- Key concerns
+- Desired outcomes
+- Unacceptable conditions
 
-을 분석하고, 모든 관점을 고려한 균형 잡힌 해결책을 제시해주세요.
+Analyze these and present a balanced solution that considers all perspectives.
 ```
 
-## ⚠️ 주의사항
+## ⚠️ Notes
 
-- 어떤 관점도 무시하거나 폄하하지 않기
-- 편향된 시각으로 특정 이해관계자의 입장만 옹호하지 않기
-- 현실적인 제약조건을 고려한 실행 가능한 해결책 도출
+- Do not ignore or disparage any perspective
+- Avoid advocating only for a specific stakeholder's position with a biased view
+- Derive actionable solutions considering realistic constraints
