@@ -1,23 +1,29 @@
 ---
-description: 새로운 개발 작업을 시작하기 위한 표준 절차를 정의합니다.
+description: Standard procedure for starting new development tasks
 ---
 
-새로운 기능을 추가하거나 버그를 수정할 때 이 워크플로우를 사용합니다.
+Use this workflow when adding new features or fixing bugs.
 
-1. **요구사항 분석**
-   - 사용자의 요청을 분석하고 구현 목표를 명확히 합니다.
-   - 영향받는 기존 파일들을 리스트업합니다.
+## 1. Requirements Analysis
+- Analyze the user's request and clarify implementation goals
+- List affected existing files
+- Identify dependencies and constraints
 
-2. **설계 및 브레인스토밍**
-   - 어떤 방식으로 구현할지 계획을 세웁니다.
-   - 필요한 라이브러리나 도구가 있는지 확인합니다.
+## 2. Design & Brainstorming
+- Plan how to implement the solution
+- Check for necessary libraries or tools
+- Consider alternative approaches
 
-3. **구현 계획 보고**
-   - 본격적인 코딩 전에 사용자에게 구현 계획을 요약하여 보고하고 승인을 받습니다.
+## 3. Implementation Plan Report
+- Before coding, summarize the implementation plan for user approval
+- Include estimated effort and potential risks
 
-4. **단계별 구현**
-   - 작은 단위로 나누어 코드를 작성합니다.
-   - 각 단계마다 빌드나 테스트를 통해 검증합니다.
+## 4. Step-by-Step Implementation
+- Write code in small, atomic units
+- Verify each step through builds or tests
+- Commit frequently with clear messages
 
-5. **최종 검토 및 완료**
-   - 작업 내용을 정리하고, 사용자에게 확인을 요청합니다.
+## 5. Final Review & Completion
+- Summarize the work performed
+- Request user confirmation
+- Document any follow-up tasks

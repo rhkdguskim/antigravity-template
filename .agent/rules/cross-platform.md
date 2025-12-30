@@ -1,19 +1,76 @@
-# 🌐 Cross-Platform Execution Rule
+# 🌐 Cross-Platform Compatibility Rules
 
-This rule ensures that the agent's command execution and file path handling are compatible across all operating systems (Windows, MacOS, Linux).
+Ensure all code and commands work across Windows, macOS, and Linux.
 
-## 📋 Detailed Guidelines
+## 1. Path Separators
 
-1. **OS Detection First**: Before starting any task, the agent must identify the user's OS environment.
-2. **Command Branching**:
-   - Directory Creation: `mkdir -p` (Unix) vs `New-Item -ItemType Directory` (PowerShell)
-   - File Listing: `ls -la` (Unix) vs `dir` (CMD/PS)
-3. **Path Separators**: 
-   - Use `/` (Forward Slash) within code where possible, or use language-specific path utilities (e.g., Node.js `path.join`).
-4. **Shell Script Suggestions**: When creating OS-specific scripts (`.sh`, `.bat`, `.ps1`), explicitly mention this to the user.
+| OS | Separator | Example |
+|----|-----------|---------|
+| Windows | `\` | `C:\Users\name\project` |
+| macOS/Linux | `/` | `/home/name/project` |
 
-## 🚀 Execution Examples
+### Best Practices
+- Use path libraries (e.g., `path.join()` in Node.js, `os.path.join()` in Python)
+- Avoid hardcoded path separators
+- Use relative paths when possible
 
-When the agent needs to create a folder:
-- "Since your environment is Mac/Linux, I will run the `mkdir -p .agent/rules` command."
-- "Since your environment is Windows, I suggest creating the folder using PowerShell."
+## 2. Shell Commands
+
+### Common Differences
+| Action | Unix (macOS/Linux) | Windows (CMD) | Windows (PowerShell) |
+|--------|-------------------|---------------|---------------------|
+| List files | `ls` | `dir` | `Get-ChildItem` or `ls` |
+| Clear screen | `clear` | `cls` | `Clear-Host` or `cls` |
+| Environment var | `export VAR=val` | `set VAR=val` | `$env:VAR="val"` |
+| Print var | `echo $VAR` | `echo %VAR%` | `echo $env:VAR` |
+| Delete file | `rm file` | `del file` | `Remove-Item file` |
+| Delete dir | `rm -rf dir` | `rmdir /s /q dir` | `Remove-Item -Recurse dir` |
+
+### Cross-Platform Recommendations
+```bash
+# Use cross-platform tools when possible
+# Node.js: cross-env, rimraf, shx
+# Python: shutil, os module
+# Go: filepath package
+```
+
+## 3. Line Endings
+
+| OS | Line Ending | Character |
+|----|-------------|-----------|
+| Windows | CRLF | `\r\n` |
+| macOS/Linux | LF | `\n` |
+
+### Git Configuration
+```bash
+# Auto-convert on commit
+git config --global core.autocrlf true   # Windows
+git config --global core.autocrlf input  # macOS/Linux
+```
+
+## 4. Executables
+
+| Type | Unix | Windows |
+|------|------|---------|
+| Scripts | `./script.sh` | `script.bat` or `script.ps1` |
+| Binaries | `./program` | `program.exe` |
+| Permissions | `chmod +x file` | Not applicable |
+
+## 5. Environment Variables
+
+### Detection
+```bash
+# Detect OS in shell
+uname -s  # Returns: Linux, Darwin (macOS), or fails on Windows
+```
+
+```javascript
+// Node.js
+process.platform  // 'win32', 'darwin', 'linux'
+```
+
+```python
+# Python
+import platform
+platform.system()  # 'Windows', 'Darwin', 'Linux'
+```

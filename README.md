@@ -1,61 +1,168 @@
-# 🌌 Antigravity Template
+# 🌌 Antigravity Framework
 
-A standardized template for the **AntiGravity** environment that works seamlessly across Windows, Mac, and Linux. This template provides optimized Rules and Workflows to help AI agents understand project context and automate repetitive tasks.
+A high-performance AI agent orchestration framework designed for extreme precision, visual excellence, and autonomous problem-solving. Drop this template into any project to unlock advanced AI-assisted development capabilities.
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
 
 ## 🚀 Key Features
 
-- **Cross-Platform Compatibility**: Standardized command guides that work on macOS, Windows (PowerShell/CMD), and Linux (Bash).
-- **AI-Optimized Context**: Rule settings that allow agents to immediately grasp project structure and development philosophy.
-- **Automated Workflows**: Automation processes for recurring development tasks (issue creation, brainstorming, building, deployment, etc.).
+- **🧠 Advanced Reasoning**: Multi-dimensional analysis and recursive thinking for complex problems
+- **🎨 Visual Excellence**: Premium UI/UX standards with modern design patterns
+- **🔀 Cross-Platform**: Works seamlessly on Windows, macOS, and Linux
+- **🤖 Multi-AI Integration**: Combine Gemini, Codex, and Claude for collaborative brainstorming
+- **👤 Specialist Personas**: Switch between Frontend, Backend, Architect, DevOps, Security, and Data personas
 
 ## 📁 Project Structure
 
-```text
+```
 .
 ├── .agent/
-│   ├── rules/              # Agent behavior and quality rules (.md)
-│   └── workflows/          # Automated workflow definitions (.md)
-├── .cursorrules            # Core instructions and environment settings
-└── README.md               # Project guide
+│   ├── rules/              # Agent behavior and quality rules
+│   │   ├── personas/       # Specialist persona definitions
+│   │   │   ├── frontend.md
+│   │   │   ├── backend.md
+│   │   │   ├── architect.md
+│   │   │   ├── devops.md
+│   │   │   ├── security.md
+│   │   │   └── data.md
+│   │   ├── thinking.md     # Advanced reasoning framework
+│   │   ├── ui-ux.md        # Visual excellence standards
+│   │   ├── architecture.md # System design patterns
+│   │   ├── code-style.md   # Code quality guidelines
+│   │   ├── security.md     # Security best practices
+│   │   └── cross-platform.md # Cross-platform compatibility
+│   └── workflows/          # Automated workflow definitions
+│       ├── task.md         # Standard development procedure
+│       ├── ai-brainstorm.md # Multi-AI brainstorming
+│       ├── deep-debug.md   # Root cause analysis
+│       ├── refactor.md     # Code improvement workflow
+│       ├── gemini.md       # Gemini CLI integration
+│       ├── codex.md        # Codex CLI integration
+│       ├── claudecode.md   # Claude Code CLI integration
+│       ├── check-env.md    # Environment verification
+│       └── mcp-install.md  # MCP server installation
+├── .cursorrules            # Core agent identity and directives
+└── README.md
 ```
 
-## 🛠 Component Details
+## 🛠 Quick Start
 
-### 1. `.agent/rules/`
-Defines **detailed rules** that the agent must follow when writing code or executing commands.
-- `cross-platform.md`: Rules for multi-OS command compatibility.
-- `code-style.md`: Common project code style rules.
-- `security.md`: Security guidelines and sensitive info protection.
+1. **Copy Template**: Clone or copy this repository into your project root
+   ```bash
+   git clone https://github.com/yourusername/antigravity-template.git .antigravity
+   cp -r .antigravity/.agent .antigravity/.cursorrules ./
+   ```
 
-### 2. `.agent/workflows/`
-Defines **workflows** that can be executed by the agent to automate complex procedures.
+2. **Activate Agent**: In your AI-enabled IDE (Cursor, etc.), issue commands:
+   ```
+   Antigravity, activate
+   ```
 
-- **Examples**:
-  - `/gemini`: Direct Gemini CLI call and query.
-  - `/codex`: Direct Codex CLI call and technical review.
-  - `/claudecode`: Direct Claude Code CLI call and review.
-  - `/ai-brainstorm`: Collaborative process combining multiple AI interfaces.
-  - `/mcp-install`: Node.js-based MCP server installation helper.
-  - `/check-env`: Environment health check.
-  - `/task`: Standard development procedure.
+3. **Use Workflows**: Execute slash commands to trigger workflows:
+   ```
+   /task        - Start a new development task
+   /deep-debug  - Debug complex issues
+   /refactor    - Improve code quality
+   /ai-brainstorm - Multi-AI idea generation
+   ```
 
-### 3. `.cursorrules` (Project Rules)
-Defines the 'Identity', 'Code Style', and 'Prohibitions' for the agent. This ensures the agent produces consistent quality code.
+4. **Switch Personas**: Activate specialist modes:
+   ```
+   /persona frontend   - UI/UX specialist
+   /persona backend    - API/server specialist
+   /persona architect  - System design specialist
+   /persona devops     - CI/CD and infrastructure
+   /persona security   - Security specialist
+   /persona data       - Data engineering specialist
+   ```
 
-- Instructs command execution based on detected OS.
-- Includes recommendations for specific frameworks or libraries.
+## 📖 Core Components
 
-## 📖 How to Use
+### `.cursorrules` - Agent Identity
+Defines the Antigravity agent's core directives:
+- Deep Analysis First
+- Visual Excellence (WOW Factor)
+- Cross-Platform Mastery
+- Workflow Adherence
+- Autonomous Verification
 
-1. **Copy Template**: Copy the files from this repository to your new project root directory.
-2. **Invoke Agent**: Ask the Antigravity or AI agent to execute a workflow using `/` commands.
-   - Example: `"Run /check-env"`
-3. **Follow Rules**: The agent will automatically respond and perform tasks according to the rules defined in `.cursorrules`.
+### Rules (`/.agent/rules/`)
+Detailed guidelines the agent follows:
+
+| Rule | Description |
+|------|-------------|
+| `thinking.md` | Advanced reasoning and verification framework |
+| `ui-ux.md` | Visual design standards and modern patterns |
+| `architecture.md` | System design and code organization |
+| `code-style.md` | Naming conventions and code quality |
+| `security.md` | Security best practices |
+| `cross-platform.md` | OS compatibility guidelines |
+
+### Personas (`/.agent/rules/personas/`)
+Specialist modes for domain-specific tasks:
+
+| Persona | Focus |
+|---------|-------|
+| `frontend` | React, Vue, CSS, Performance, Accessibility |
+| `backend` | APIs, Databases, Security, Scalability |
+| `architect` | System Design, Trade-offs, ADRs |
+| `devops` | CI/CD, Docker, Kubernetes, Monitoring |
+| `security` | OWASP, Authentication, Encryption |
+| `data` | ETL, Data Quality, Warehousing |
+
+### Workflows (`/.agent/workflows/`)
+Automated procedures for common tasks:
+
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| `/task` | New feature/bug | Standard development procedure |
+| `/deep-debug` | Complex bug | Root cause analysis |
+| `/refactor` | Code improvement | Systematic refactoring |
+| `/ai-brainstorm` | Complex decisions | Multi-AI collaboration |
+| `/check-env` | Environment issues | Verify development setup |
+
+## 🔧 Customization
+
+### Adding New Workflows
+Create a new `.md` file in `.agent/workflows/`:
+```markdown
+---
+description: Brief description of the workflow
+---
+
+Step-by-step instructions...
+```
+
+### Adding New Personas
+Create a new `.md` file in `.agent/rules/personas/`:
+```markdown
+# 🎯 [Role] Specialist Persona
+
+**Activation**: `/persona [name]`
+
+## Identity
+...
+
+## Core Expertise
+...
+```
+
+### Modifying Rules
+Edit the relevant `.md` file in `.agent/rules/` to adjust agent behavior.
 
 ## 🤝 Contributing
 
-This template evolves through community feedback. If you have suggestions for new workflows or rule improvements, feel free to contribute!
+Contributions are welcome! Feel free to:
+- Suggest new workflows
+- Propose rule improvements
+- Add new persona definitions
+- Report issues
+
+## 📜 License
+
+MIT License - See LICENSE file for details.
 
 ---
 
-**Happy Coding with AntiGraivty!** 🚀
+**Defy Gravity. Code with Precision.** 🚀

@@ -1,20 +1,89 @@
 ---
-description: Gemini와 Codex CLI를 활용한 AI 브레인스토밍 세션 - 두 AI가 의견을 주고받으며 아이디어 도출
+description: AI brainstorming session using Gemini, Codex, and Claude Code CLI - three AIs exchange opinions to generate ideas (unavailable models are automatically skipped)
 ---
 
-이 워크플로우는 `gemini`와 `codex`를 결합하여 협업 브레인스토밍을 수행합니다.
+This workflow combines `gemini`, `codex`, and `claudecode` for collaborative brainstorming.
+**Unavailable CLIs are automatically skipped.**
 
-## 🔄 워크플로우 결합 프로세스
+## 🛠 Prerequisites
 
-1. **[Gemini I/F] 초안 생성**
-   - `/gemini`를 실행하여 아이디어의 기초가 되는 전체적인 설계 초안을 도출합니다.
+First, check the availability of each CLI tool:
+```bash
+# Availability check
+command -v gemini >/dev/null 2>&1 && echo "✅ Gemini available" || echo "❌ Gemini not found"
+command -v codex >/dev/null 2>&1 && echo "✅ Codex available" || echo "❌ Codex not found"  
+command -v claude >/dev/null 2>&1 && echo "✅ Claude available" || echo "❌ Claude not found"
+```
 
-2. **[Codex I/F] 기술 검증**
-   - Gemini의 출력 결과물을 가져와 `/codex`의 입력으로 전달합니다.
-   - 기술적 한계, 최적화 방안, 구현 디테일을 검증받습니다.
+## 🔄 Workflow Process
 
-3. **[Gemini I/F] 최종 통합**
-   - Codex의 피드백을 다시 `/gemini`에 전달하여, 창의적 설계와 기술적 타당성이 결합된 최종 결과물을 완성합니다.
+### Phase 1: Draft Generation (Primary AI)
 
-4. **결과 요약**
-   - 두 도구의 협업 과정을 거쳐 완성된 최종 솔루션을 사용자에게 보고합니다.
+Generate a draft using the first available AI:
+
+1. **Gemini** (try first)
+   - Run `/gemini` to generate an initial design draft as the foundation for ideas.
+   - If failed, proceed to next AI
+
+2. **Codex** (if Gemini fails)
+   - Run `/codex` to generate draft
+   - If failed, proceed to next AI
+
+3. **Claude Code** (if Codex fails)
+   - Run `/claudecode` to generate draft
+
+### Phase 2: Technical Review (Secondary AI)
+
+Review using an AI not used in Phase 1:
+
+1. **Select Reviewer**
+   - Choose from available AIs excluding the one used in Phase 1
+   - Review technical limitations, optimization strategies, implementation details
+
+2. **Collect Feedback**
+   - Document issues, improvements, alternative approaches
+
+### Phase 3: Creative Enhancement (Tertiary AI)
+
+If a third AI is available, provide additional perspectives:
+
+1. **Multi-angle Review**
+   - Explore overlooked perspectives or edge cases
+   - Provide UX-focused feedback
+
+### Phase 4: Final Integration
+
+1. **Synthesize Results**
+   - Combine outputs from all used AIs
+   - Commonly suggested items get high priority
+   - Conflicting opinions presented as comparison table
+
+2. **Derive Action Plan**
+   - Define concrete implementation steps
+   - Estimate time for each step
+
+## 📊 Output Format
+
+```markdown
+# 🧠 AI Brainstorming Results
+
+## Participating AIs
+- [x] Gemini: Draft generation
+- [x] Codex: Technical review
+- [ ] Claude: Not available (skipped)
+
+## Key Ideas
+...
+
+## Technical Considerations
+...
+
+## Recommended Action Plan
+1. ...
+2. ...
+```
+
+## ⚠️ Error Handling
+
+- If all AIs are unavailable: Switch to manual brainstorming mode
+- If only some AIs are available: Proceed with available AIs and note in results

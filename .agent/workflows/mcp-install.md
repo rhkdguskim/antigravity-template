@@ -1,36 +1,57 @@
 ---
-description: Node.js를 사용하여 새로운 Model Context Protocol(MCP) 서버를 설치합니다.
+description: Install a new Model Context Protocol (MCP) server using Node.js
 ---
 
-이 워크플로우는 별도의 외부 스크립트 없이 Node.js를 직접 활용하여 필요한 MCP 서버를 시스템에 설치합니다.
+This workflow helps install and configure MCP servers for enhanced AI capabilities.
 
-## 🔄 설치 단계
+## Prerequisites
 
-1. **MCP 패키지 확인**
-   - 설치하고자 하는 MCP 서버의 NPM 패키지 명칭을 확인합니다.
-   - 예: `@modelcontextprotocol/server-everything`, `mcp-server-git`
+- Node.js installed (LTS version recommended)
+- npm, yarn, or pnpm available
 
-2. **설치 명령 실행**
-   - 아래의 인라인 노드 스크립트를 실행하여 설치를 진행합니다.
-   
+## Installation Steps
+
+1. **Identify MCP Server**
+   - Determine the MCP server package name
+   - Common examples: `@anthropic/mcp-server-*`, `@modelcontextprotocol/*`
+
+2. **Install Package**
    ```bash
-   node -e "
-   const { execSync } = require('child_process');
-   const pkg = '{PACKAGE_NAME}';
-   console.log('🚀 Installing MCP: ' + pkg);
-   try {
-     execSync('npm install -g ' + pkg, { stdio: 'inherit' });
-     console.log('\n✅ Success! Path: ' + execSync('npm config get prefix').toString().trim() + '/bin/' + pkg.split('/').pop());
-   } catch (e) {
-     console.error('❌ Failed: ' + e.message);
-   }
-   "
+   # Using npm
+   npm install -g <mcp-package-name>
+   
+   # Using npx (no global install)
+   npx <mcp-package-name>
    ```
 
-3. **설치 결과 확인**
-   - 출력된 경로를 에이전트 설정(mcpServers)에 추가합니다.
+3. **Configure Server**
+   - Check the MCP server documentation
+   - Add configuration to your IDE or agent settings
+   - Example configuration locations:
+     - Cursor: `.cursor/mcp.json`
+     - VSCode: `.vscode/mcp.json`
 
-## 💡 주요 패키지 예시
-- `@modelcontextprotocol/server-postgres`
-- `@modelcontextprotocol/server-github`
-- `mcp-server-sqlite`
+4. **Verify Installation**
+   ```bash
+   # Check if server is available
+   npx <mcp-package-name> --help
+   ```
+
+## Configuration Example
+
+```json
+{
+  "mcpServers": {
+    "<server-name>": {
+      "command": "npx",
+      "args": ["<mcp-package-name>"]
+    }
+  }
+}
+```
+
+## Troubleshooting
+
+- Ensure Node.js version is compatible
+- Check for required environment variables
+- Review server-specific documentation

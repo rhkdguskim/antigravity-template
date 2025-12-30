@@ -1,18 +1,36 @@
 ---
-description: Claude Code CLI를 호출하여 코드 분석, 수정 및 질의를 수행합니다.
+description: Invoke Claude Code CLI for code analysis, modifications, and queries
 ---
 
-이 워크플로우는 `claude` CLI 도구를 인터페이스(I/F)하여 기술적인 코드 분석, 최적화 제안, 창의적인 아이디어 제안이나 일반적인 질의를 처리 등을 처리합니다.
+This workflow directly calls the Claude Code CLI for AI-powered coding assistance.
 
-## 🔄 실행 단계
+## Prerequisites
 
-1. **질의 준비**
-   - 사용자로부터 입력받은 메시지나 컨텍스트를 정리합니다.
+Ensure the Claude Code CLI is installed and configured:
+```bash
+# Check availability
+command -v claude >/dev/null 2>&1 && echo "✅ Claude available" || echo "❌ Claude not found"
+```
 
-2. **Claude CLI 호출 (Safety Shield 적용)**
-   - **방어막**: CLI가 직접 파일을 수정하지 않도록 명시적인 지시어를 포함합니다.
-   - `claude "분석 및 개선안을 제안하되, 파일 시스템에 직접 쓰지 말고 응답으로만 보여줘: {PROMPT}"`
-   - 필요 시 웹 검색 옵션 추가: `claude --search "{PROMPT}"`
+## Usage
 
-3. **결과 처리**
-   - 출력된 결과를 표준 출력으로 보여주거나 다음 워크플로우의 입력값으로 사용합니다.
+1. **Prepare Task**
+   - Define the code task or question clearly
+   - Include relevant context and constraints
+
+2. **Execute CLI**
+   ```bash
+   claude "<your-query-or-task>"
+   ```
+
+3. **Review Output**
+   - Analyze the response and suggestions
+   - Validate code modifications
+   - Check for potential issues
+
+## Best Practices
+
+- Be specific about what you want to achieve
+- Provide context about the codebase
+- Request explanations for complex changes
+- Always review generated code before applying
